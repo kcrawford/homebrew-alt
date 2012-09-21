@@ -1,14 +1,16 @@
 require 'formula'
 
 class TmuxIterm2 < Formula
-  url 'http://iterm2.googlecode.com/files/tmux-for-iTerm2-20120203.tar.gz'
-  md5 '59305a26bdd0245054fe719e6b2a960e'
+  url 'http://iterm2.googlecode.com/files/iTerm2-1_0_0_20120726.zip'
+  md5 '596c8ff70a836f67ee3197bb60cf92b3'
   homepage 'http://github.com/gnachman/tmux2'
 
   depends_on 'libevent'
 
   def install
     ENV.append "LDFLAGS", '-lresolv'
+    system "tar", "-xvf", "tmux*.tar.gz"
+    Dir.chdir "tmux"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--sysconfdir=#{etc}"
     system "make install"
