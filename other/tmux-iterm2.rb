@@ -6,11 +6,13 @@ class TmuxIterm2 < Formula
   homepage 'http://github.com/gnachman/tmux2'
 
   depends_on 'libevent'
+  depends_on :automake
 
   def install
     ENV.append "LDFLAGS", '-lresolv'
     system("tar -xvf tmux*.tar.gz")
     Dir.chdir "tmux"
+    system  "sh", "autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--sysconfdir=#{etc}"
     system "make install"
