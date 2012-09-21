@@ -9,7 +9,7 @@ class TmuxIterm2 < Formula
 
   def install
     ENV.append "LDFLAGS", '-lresolv'
-    system "tar", "-xvf", "tmux*.tar.gz"
+    system("tar -xvf tmux*.tar.gz")
     Dir.chdir "tmux"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--sysconfdir=#{etc}"
