@@ -7,6 +7,9 @@ class TmuxIterm2 < Formula
 
   depends_on 'libevent'
   depends_on :automake
+  depends_on :libtool
+  depends_on 'pkg-config'
+
 
   def install
     ENV.append "LDFLAGS", '-lresolv'
