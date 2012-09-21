@@ -13,6 +13,8 @@ class TmuxIterm2 < Formula
 
   def install
     ENV.append "LDFLAGS", '-lresolv'
+    ENV.append "LIBEVENT_LIBS", "#{HOMEBREW_PREFIX}/lib"
+     
     system("tar -xvf tmux*.tar.gz")
     Dir.chdir "tmux"
     system  "sh", "autogen.sh"
