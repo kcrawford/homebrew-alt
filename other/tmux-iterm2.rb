@@ -1,8 +1,8 @@
 require 'formula'
 
 class TmuxIterm2 < Formula
-  url 'http://iterm2.googlecode.com/files/iTerm2-1_0_0_20120726.zip'
-  md5 '596c8ff70a836f67ee3197bb60cf92b3'
+  url 'http://iterm2.googlecode.com/files/iTerm2-1_0_0_20130122.zip'
+  sha1 '4aaf633b26799a1ffa136e780bac9f38f85cf342'
   homepage 'http://github.com/gnachman/tmux2'
 
   depends_on 'libevent'
